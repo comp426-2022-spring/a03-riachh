@@ -83,7 +83,7 @@ function countFlips(array) {
   app.get('/app/flips/:number', (req, res) => {
     var flip = coinFlips(req.params.number)
     var num = countFlips(flip)
-    res.status(200).json({'flips' : flip, 'count' : num})
+    res.status(200).json({'raw' : flip, 'summary' : num})
   });
 
   app.get('/app/flip/call/:guess(heads|tails)/', (req, res) => {
